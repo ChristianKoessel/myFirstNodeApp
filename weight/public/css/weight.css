@@ -1,0 +1,98 @@
+
+@import url('http://fonts.googleapis.com/css?family=Quicksand');
+
+:root {
+    --main-color: #fa5b4d;
+    --background-color: #faf9f0;
+}
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: 'Georgia';
+    background-color: var(--background-color);
+    color: #444;
+}
+header {
+    font-family: 'Quicksand';
+    padding: 0.5em 0.5em;
+    color: #fff;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: var(--main-color);
+    border-bottom: 1px solid darken(var(--main-color), 30%);
+    text-shadow: 0px -1px 0px darken(var(--main-color), 30%);
+}
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin: 1.5em auto;
+    max-width: 40em;
+}
+main {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex: 2 1 65%;
+    min-width: 5em;
+}
+main p {
+    margin-bottom: 1.5em;
+}
+main h1 {
+    font-family: 'Quicksand';
+    margin-top: 0;
+}
+aside {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex: 1 1 35%;
+    min-width: 3em;
+}
+aside div {
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0px 0px 0px 3px #fff;
+    margin-left: 1em;
+    background-color: var(--background-color);
+}
+aside h1 {
+    font-family: 'Quicksand';
+    margin: 0.5em 0.4em 0.1em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px dotted #ddd;
+    margin-bottom: 0.5em;
+}
+aside p {
+    font-size: 0.8em;
+    padding: 0 0.5em;
+    margin-bottom: 0.8em;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 1em auto;
+    border-top: 1px dotted #ccc;
+    padding-top: 0.5em;
+    font-size: 0.8em;
+}
+footer p {
+    margin: 0 0.5em;
+}
+p {
+    line-height: 1.5em;
+}
+input {
+    /*box-sizing: border-box;*/
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 0.2em;
+}

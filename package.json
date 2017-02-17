@@ -1,0 +1,21 @@
+{
+  "name": "my_first_node_app",
+  "version": "1.0.0",
+  "description": "My first Node App as a playground",
+  "private": "true",
+  "main": "weight/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "author": "Christian Kössel (christian.j.koessel@gmail.com)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.1",
+    "morgan": "^1.8.1",
+    "serve-static": "^1.11.2"
+  }
+}

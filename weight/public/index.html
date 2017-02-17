@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gewicht</title>
+    <link href="css/weight.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Mein Gewicht</h1>
+    </header>
+    <div class="container">
+        <main>
+            <div>
+                <h1>Eingabe</h1>
+                <form>
+                    <label for="actual-weight">Aktuelles Gewicht:</label>
+                    <input id="actual-weight" name="weight" type="number" min="50" max="100"/>
+                    <button id="save-weight" type="button">Speichern</button>
+                </form>
+                <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in.</p>
+                <p>Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus.
+                In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor.</p>
+            </div>
+            <div>
+                <h1>Verlauf</h1>
+                <table class="weight-table">
+                    <th>Datum</th><th>Gewicht</th>
+                </table>
+                <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in.</p>
+                <p>Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus.
+                In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor.</p>
+            </div>
+        </main>
+        <aside>
+            <div>
+                <h1>Widget</h1>
+                <p>Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim.</p>
+                <p>Vivamus hendrerit arcu sed erat molestie vehicula.</p>
+            </div>
+        </aside>
+        <footer>
+            <p>My first Node App</p>
+            <p id="version">Version 1.0.0</p>
+            <p>© Christian Kössel, 2017</p>
+        </footer>
+    </div>
+
+<script src="libraries/jquery-3.1.0.min.js"></script>
+<script src="assets/weight.js"></script>
+
+</body>
+</html>
