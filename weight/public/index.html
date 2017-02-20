@@ -15,10 +15,10 @@
         <main>
             <div>
                 <h1>Eingabe</h1>
-                <form>
+                <form action="/weight" method="POST">
                     <label for="actual-weight">Aktuelles Gewicht:</label>
-                    <input id="actual-weight" name="weight" type="number" min="50" max="100"/>
-                    <button id="save-weight" type="button">Speichern</button>
+                    <input id="actual-weight" name="weight" type="number" required="true" step="0.1" min="0"/>
+                    <input id="save-weight" type="submit"/>
                 </form>
                 <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in.</p>
                 <p>Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus.
