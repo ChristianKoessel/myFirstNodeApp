@@ -15,12 +15,23 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+var getData = function() {
+    return JSON.parse(fs.readFileSync(__dirname + '/data/weight.json'));
+};
+
+app.get('/weight', function (request, response) {
+    response.json(getData());
+});
+
 app.post('/weight', function (request, response) {
-    var weightTable = {
-        'date': new Date(),
+    var data = getData();
+    var requestDate = new Date(request.body.date);
+    //todo: bei gleichem Datum überschreiben
+    data.values.push({
+        'date': new Date(request.body.date),
         'weight': request.body.weight
-    }
-    fs.appendFile(__dirname + '/data/weight.json', JSON.stringify(weightTable));
+    });
+    fs.writeFile(__dirname + '/data/weight.json', JSON.stringify(data));
     response.redirect('/');
 });
 

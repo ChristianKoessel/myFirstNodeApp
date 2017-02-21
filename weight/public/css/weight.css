@@ -90,18 +90,27 @@ footer p {
 p {
     line-height: 1.5em;
 }
+form {
+    line-height: 1.5em;
+}
 input {
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 3px;
-    padding: 0.2em;
-    font-family: 'Quicksand';
-    font-weight: bold;
+    /*font-family: 'Quicksand';*/
+    /*font-weight: bold;*/
     color: #444;
     outline: none;
 }
-input:focus {
-    border: 1px solid black;
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+table, th, td {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 0.2em;
+    text-align: center;
 }
 #actual-weight {
-    width: 4em;
+    width: 3.5em;
 }

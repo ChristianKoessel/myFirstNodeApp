@@ -16,29 +16,27 @@
             <div>
                 <h1>Eingabe</h1>
                 <form action="/weight" method="POST">
-                    <label for="actual-weight">Aktuelles Gewicht:</label>
+                    <label for="date">Gewicht am</label>
+                    <input id="date" type="date" name="date">
+                    <label for="date">:</label>
                     <input id="actual-weight" name="weight" type="number" required="true" step="0.1" min="0"/>
+                    <label for="actual-weight">kg</label>
                     <input id="save-weight" type="submit"/>
                 </form>
-                <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in.</p>
-                <p>Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus.
-                In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor.</p>
+                <p></p>
             </div>
             <div>
                 <h1>Verlauf</h1>
                 <table class="weight-table">
                     <th>Datum</th><th>Gewicht</th>
                 </table>
-                <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in.</p>
-                <p>Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus.
-                In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor.</p>
             </div>
         </main>
         <aside>
             <div>
-                <h1>Widget</h1>
-                <p>Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim.</p>
-                <p>Vivamus hendrerit arcu sed erat molestie vehicula.</p>
+                <h1>Hilfe</h1>
+                <p>Bitte einmal pro Tag das aktuelle Gewicht eingeben!</p>
+                <p>Falls erforderlich kann ein abweichendes Datum angegeben werden.</p>
             </div>
         </aside>
         <footer>
