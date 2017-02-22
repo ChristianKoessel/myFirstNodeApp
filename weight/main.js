@@ -26,6 +26,7 @@ app.get('/weight', function (request, response) {
 app.post('/weight', function (request, response) {
     var requestDate = new Date(request.body.date);
     var requestWeight = Number(request.body.weight).toPrecision(3);
+    console.log("addWeight %s %s", requestDate, requestWeight);
     var data = getData();
     data.values = data.values.filter(function(element) {
         return (new Date(element.date).getTime() != requestDate.getTime());
