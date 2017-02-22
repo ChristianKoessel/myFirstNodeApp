@@ -24,12 +24,15 @@ app.get('/weight', function (request, response) {
 });
 
 app.post('/weight', function (request, response) {
-    var data = getData();
     var requestDate = new Date(request.body.date);
-    //todo: bei gleichem Datum überschreiben
+    var requestWeight = Number(request.body.weight).toPrecision(3);
+    var data = getData();
+    data.values = data.values.filter(function(element) {
+        return (new Date(element.date).getTime() != requestDate.getTime());
+    });
     data.values.push({
-        'date': new Date(request.body.date),
-        'weight': request.body.weight
+        'date': requestDate,
+        'weight': requestWeight
     });
     fs.writeFile(__dirname + '/data/weight.json', JSON.stringify(data));
     response.redirect('/');
