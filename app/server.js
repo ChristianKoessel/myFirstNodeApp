@@ -4,26 +4,28 @@ const express = require('express');
 const morgan = require('morgan');
 const serveStatic = require('serve-static');
 const bodyParser = require('body-parser');
-const fs = require('fs');
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 app.use(morgan('dev'));
 app.use(serveStatic(__dirname + '/public'));
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
-var getData = function() {
-    return JSON.parse(fs.readFileSync(__dirname + '/data/weight.json'));
-};
+const router = express.Router();
+app.use('/api', router);
 
-app.get('/weight', function (request, response) {
+router.get('/', function (req, res) {
+    res.json({message: 'Hi there!'});
+});
+
+
+router.get('/weight', function (request, response) {
     response.json(getData());
 });
 
-app.post('/weight', function (request, response) {
+router.post('/weight', function (request, response) {
     var requestDate = new Date(request.body.date);
     var requestWeight = Number(request.body.weight).toPrecision(3);
     console.log("addWeight %s %s", requestDate, requestWeight);

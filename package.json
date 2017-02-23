@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "My first Node App as a playground",
   "private": "true",
-  "main": "weight/main.js",
+  "main": "app/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
