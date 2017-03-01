@@ -14,32 +14,39 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 const router = express.Router();
-app.use('/api', router);
 
-router.get('/', function (req, res) {
-    res.json({message: 'Hi there!'});
+// Weight-API
+const weightApi = require('./model/weight.js');
+router.get('/', function(req, res) {
+    res.json({ message: 'Welcome to our API!' });   
 });
-
-
-router.get('/weight', function (request, response) {
-    response.json(getData());
-});
-
-router.post('/weight', function (request, response) {
-    var requestDate = new Date(request.body.date);
-    var requestWeight = Number(request.body.weight).toPrecision(3);
-    console.log("addWeight %s %s", requestDate, requestWeight);
-    var data = getData();
-    data.values = data.values.filter(function(element) {
-        return (new Date(element.date).getTime() != requestDate.getTime());
-    });
-    data.values.push({
-        'date': requestDate,
-        'weight': requestWeight
-    });
-    fs.writeFile(__dirname + '/data/weight.json', JSON.stringify(data));
+router.route('/weight')
+.post(function (request, response) {
+    weightApi.default.add(request.body);
     response.redirect('/');
+})
+.get(function (request, response) {
+    response.send(weightApi.default.getAll());
+})
+.delete(function(request, response) {
+    response.send(weightApi.default.removeAll());
 });
 
+router.route('/weight/:date')
+.get(function (request, response) {
+    response.send(weightApi.default.get(request.params.date));
+})
+.delete(function(request, response) {
+    response.send(weightApi.default.remove(request.params.date));
+})
+.put(function(request, response) {
+    let weight = {
+        date: request.params.date,
+        weight: request.body.weight
+    };
+    response.send(weightApi.default.add(weight));
+});
+
+app.use('/api', router);
 app.listen(PORT);
 console.log('Server running at http://localhost:' + PORT);

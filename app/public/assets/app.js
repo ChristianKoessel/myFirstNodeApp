@@ -6,7 +6,7 @@ var ajaxSetup = {
 };
 
 var getWeight = function() {
-    ajaxSetup.url = 'http://localhost:8080/weight';
+    ajaxSetup.url = 'http://localhost:8080/api/weight/';
     $.ajax(ajaxSetup)
         .fail(function (response) {
             console.log(response);
